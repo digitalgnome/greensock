@@ -4,6 +4,9 @@
         h2 = $('h2'),
         i = 0;
 
+    // Set the url
+    history.pushState("/", "/", "/");
+
     var introAnimation = function() {
 
             i = 0;
@@ -37,18 +40,21 @@
                 $(h2).html("Animation completed with " + i + " steps");
                 console.log("Animation completed!");
             }
+
     };
     introAnimation();
 
-    $(h2).click(function() {
+    $(h2).click(function(event) {
+        // To prevent # being added to url
+        event.preventDefault();
         $(this).html('');
-        $(this).hide
         introAnimation();
     });
 
-    $(img).click(function() {
+    $(img).click(function(event) {
+        // To prevent # being added to url
+        event.preventDefault();
         $(h2).html('');
-        $(this).hide();
         introAnimation();
     });
 

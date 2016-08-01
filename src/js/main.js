@@ -5,7 +5,7 @@
         i = 0;
 
     // Set the url
-    history.pushState("/", "/", "/");
+    history.pushState("/", "/", "/greensock-git");
 
     var introAnimation = function() {
 
